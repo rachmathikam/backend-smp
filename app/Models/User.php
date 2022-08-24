@@ -19,15 +19,8 @@ class User extends Authenticatable
     */
     protected $fillable = [
         'name',
-        'user_id',
         'email',
-        'join_date',
-        'phone_number',
-        'status',
-        'role_name',
-        'avatar',
-        'position',
-        'department',
+        'image',
         'password',
     ];
 
@@ -49,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function guru(){
+        return $this->hasOne(Guru::class,);
+    }
+
+
+    public function siswa(){
+        return $this->hasOne(Siswa::class,);
+    }
 }
