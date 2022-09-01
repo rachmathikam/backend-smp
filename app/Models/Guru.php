@@ -11,4 +11,14 @@ class Guru extends Model
     protected $tabel = 'gurus';
     protected $guarded = [];
 
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function raport()
+    {
+        return $this->belongsTo(Raport::class);
+    }
 }

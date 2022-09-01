@@ -5,17 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Siswa extends Model
+class MataPelajaran extends Model
 {
     use HasFactory;
-    protected $tabel = 'siswas';
+
+    protected $table = 'mata_pelajarans';
     protected $guarded = [];
-
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function raport()
     {

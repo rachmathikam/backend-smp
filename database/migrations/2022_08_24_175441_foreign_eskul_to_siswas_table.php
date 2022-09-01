@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::table('siswas', function (Blueprint $table) {
+           $table->foreignId('eskul_id')->nullable()->references('id')->on('eskul');
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('siswas', function (Blueprint $table) {
             //
         });
     }

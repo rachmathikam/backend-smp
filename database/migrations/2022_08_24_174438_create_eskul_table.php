@@ -13,17 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gurus', function (Blueprint $table) {
+        Schema::create('eskul', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onupdate('cascade')->ondelete('cascade');
-            $table->string('nip');
             $table->string('nama',100);
-            $table->string('tempat_lahir',40);
-            $table->date('tanggal_lahir');
-            $table->string('gender',10);
-            $table->string('agama',20);
-            $table->text('alamat');
-            $table->string('no_telp');
             $table->timestamps();
         });
     }
@@ -35,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gurus');
+        Schema::dropIfExists('eskul');
     }
 };
